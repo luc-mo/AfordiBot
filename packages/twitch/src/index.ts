@@ -10,4 +10,4 @@ const cronJobs = container.resolve('cronJobs')
 twitchBot.connect()
 cronJobs.start()
 
-console.log('test-ci-25')
+console.log('test-ci-26')
