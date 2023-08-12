@@ -21,11 +21,9 @@ jobs:
         pnpm-version: [8.8.6]
     steps:
       - uses: actions/checkout@v3
-      - name: Setup pnpm ${{ matrix.pnpm-version }}
       - uses: pnpm/action-setup@0609f0983b7a228f052f81ef4c3d6510cae254ad
         with:
           version: ${{ matrix.pnpm-version }}
-      - name: Setup node ${{ matrix.node-version }}
       - uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
