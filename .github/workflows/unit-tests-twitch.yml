@@ -1,16 +1,16 @@
-name: unit-tests-core
+name: unit-tests-twitch
 
 on:
   push:
     branches:
       - test-ci
     paths:
-      - 'packages/core/**'
+      - 'packages/twitch/**'
   pull_request:
     branches:
       - test-ci
     paths:
-      - 'packages/core/**'
+      - 'packages/twitch/**'
 
 jobs:
   build:
@@ -32,5 +32,5 @@ jobs:
           cache: 'pnpm'
       - run: pnpm install --no-frozen-lockfile
       - run: pnpm lint
-      - run: pnpm filter "@afordibot/core" test
-      - run: pnpm filter "@afordibot/core" build
+      - run: pnpm filter "@afordibot/twitch" test
+      - run: pnpm filter "@afordibot/twitch" build
