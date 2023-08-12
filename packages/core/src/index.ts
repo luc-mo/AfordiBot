@@ -9,4 +9,4 @@ export { InvalidUserError, InvalidUserMessages } from 'domain/user/errors/invali
 // Package entry point
 export { AfordiBot } from 'src/afordibot'
 
-console.log('test-ci-9')
+console.log('test-ci-10')
