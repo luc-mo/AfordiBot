@@ -1,8 +1,5 @@
 {
   "compilerOptions": {
-    "paths": {
-      "@afordibot/core": ["./packages/core/src"]
-    },
     "target": "ESNext",
     "moduleResolution": "node",
     "module": "commonjs",

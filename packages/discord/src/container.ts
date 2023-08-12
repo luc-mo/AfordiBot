@@ -23,4 +23,4 @@ container.register({
 
 export { container }
 
-console.log('test-ci-23')
+console.log('test-ci-24')
