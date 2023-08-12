@@ -52,7 +52,7 @@ jobs:
         run: npm i -g @railway/cli
 
       - name: Deploy railway
-        run: railway up packages/twitch
+        run: railway up ./packages/twitch
         env:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN_DEVELOPMENT }}
 
