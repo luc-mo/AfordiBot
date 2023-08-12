@@ -20,10 +20,14 @@ jobs:
         node-version: [16.x, 18.x]
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+      - name: Setup Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-      - run: npm install -g pnpm@8.8.6 --registry=https://registry.npmjs.org/
+          cache: 'pnpm'
       - run: pnpm install
       - run: pnpm build --filter=@afordibot/core
       - run: pnpm test --filter=@afordibot/core
