@@ -13,11 +13,8 @@ on:
       - 'packages/core/**'
 
 jobs:
-  build:
+  setup:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: 'packages/core'
     strategy:
       matrix:
         node-version: [16.x]
@@ -34,6 +31,10 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'pnpm'
       - run: pnpm install --no-frozen-lockfile
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: pnpm lint
+      - run: cd packages/core
       - run: pnpm build
       - run: pnpm test
-
