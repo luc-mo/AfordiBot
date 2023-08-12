@@ -28,7 +28,8 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'pnpm'
+      - working-directory: './packages/core'
       - run: pnpm install --no-frozen-lockfile
-      - run: pnpm build --filter "@afordibot/core"
-      - run: pnpm test --filter "@afordibot/core"
+      - run: pnpm build
+      - run: pnpm test
 
