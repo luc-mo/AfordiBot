@@ -32,6 +32,6 @@ jobs:
           cache: 'pnpm'
       - run: pnpm install --no-frozen-lockfile
       - run: pnpm lint
-      - run: pnpm filter "@afordibot/core" build
-      - run: pnpm filter "@afordibot/discord" test
-      - run: pnpm filter "@afordibot/discord" build
+      - run: pnpm --filter @afordibot/core build
+      - run: pnpm --filter @afordibot/discord test
+      - run: pnpm --filter @afordibot/discord build

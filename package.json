@@ -6,7 +6,6 @@
   "scripts": {
     "build": "pnpm --recursive build",
     "test": "pnpm --recursive test",
-    "filter": "pnpm --filter",
     "lint": "rome check . --apply",
     "format": "rome format --write .",
     "lint:check": "rome check .",

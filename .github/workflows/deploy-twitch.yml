@@ -40,22 +40,19 @@ jobs:
         run: pnpm lint
 
       - name: Run core tests
-        run: pnpm filter "@afordibot/core" test
+        run: pnpm --filter @afordibot/core test
 
       - name: Run core build
-        run: pnpm filter "@afordibot/core" build
+        run: pnpm --filter @afordibot/core build
 
       - name: Run twitch tests
-        run: pnpm filter "@afordibot/twitch" test
+        run: pnpm --filter @afordibot/twitch test
 
       - name: Install railway
         run: npm i -g @railway/cli
-      
-      - name: Open twitch package
-        run: cd ./packages/twitch && ls
 
       - name: Deploy railway
-        run: railway up -s afordibot-test -e development ./packages/twitch
+        run: railway up -s afordibot-test -e development
         env:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN_DEVELOPMENT }}
 
