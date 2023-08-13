@@ -4,7 +4,6 @@
   "packageManager": "pnpm@8.6.6",
   "private": true,
   "scripts": {
-    "build": "pnpm --recursive build",
     "test": "pnpm --recursive test",
     "lint": "rome check . --apply",
     "format": "rome format --write .",
