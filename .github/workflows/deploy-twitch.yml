@@ -15,8 +15,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      RAILWAY_PROJECT_ID_DEVELOPMENT: ${{ secrets.RAILWAY_TOKEN_DEVELOPMENT }}
     strategy:
       matrix:
         node-version: [16.x]
@@ -57,7 +55,7 @@ jobs:
         run: cd ./packages/twitch && ls
 
       - name: Deploy railway
-        run: railway up -s $RAILWAY_PROJECT_ID_DEVELOPMENT -e development ./packages/twitch
+        run: railway up -s afordibot-test -e development ./packages/twitch
         env:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN_DEVELOPMENT }}
 
