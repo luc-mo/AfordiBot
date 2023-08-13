@@ -15,6 +15,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      RAILWAY_PROJECT_ID_DEVELOPMENT: ${{ secrets.RAILWAY_TOKEN_DEVELOPMENT }}
     strategy:
       matrix:
         node-version: [16.x]
@@ -50,9 +52,12 @@ jobs:
 
       - name: Install railway
         run: npm i -g @railway/cli
+      
+      - name: Open twitch package
+        run: cd ./packages/twitch && ls
 
       - name: Deploy railway
-        run: railway up ./packages/twitch
+        run: railway up -s $RAILWAY_PROJECT_ID_DEVELOPMENT -e development ./packages/twitch
         env:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN_DEVELOPMENT }}
 
