@@ -12,5 +12,5 @@ jobs:
     env:
       PREVIOUS_EVENT: ${{ github.event }}
     steps:
-      run: echo $PREVIOUS_EVENT
+      - run: echo $PREVIOUS_EVENT
       
