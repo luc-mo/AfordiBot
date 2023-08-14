@@ -1,4 +1,4 @@
-name: deploy-twitch
+name: second
 
 on:
   workflow_run:
