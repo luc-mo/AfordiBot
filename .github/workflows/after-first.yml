@@ -2,7 +2,6 @@ name: after-first
 
 on:
   workflow_run:
-    workflows: first
     types:
       - completed
 
