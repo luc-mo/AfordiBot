@@ -1,0 +1,16 @@
+name: deploy-twitch
+
+on:
+  workflow_run:
+    workflows: ['first']
+    types:
+      - completed
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      PREVIOUS_EVENT: ${{ github.event }}
+    steps:
+      run: echo $PREVIOUS_EVENT
+      

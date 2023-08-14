@@ -1,0 +1,8 @@
+name: first
+
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    run: echo 'First workflow'
