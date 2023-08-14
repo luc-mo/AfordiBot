@@ -7,3 +7,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo 'First workflow'
+      - run: echo ${{ github.workflow_run }}
