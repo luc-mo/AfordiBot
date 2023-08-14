@@ -5,6 +5,8 @@ on: [push]
 jobs:
   test:
     runs-on: ubuntu-latest
+    env:
+      WORKFLOW: ${{ github.workflow_run }}
     steps:
       - run: echo 'First workflow'
-      - run: echo ${{ github.workflow_run }}
+      - run: echo $WORKFLOW
